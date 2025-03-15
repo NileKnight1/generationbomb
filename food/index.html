@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Who is the bomber | Food</title>
+    <link rel="stylesheet" href="../css/the foods.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <button id="b1" onclick="shide('p1')">Player 1</button>
+        <button id="b2" onclick="shide('p2')">Player 2</button>
+        <button id="b3" onclick="shide('p3')">Player 3</button>
+        <button id="b4" onclick="shide('p4')">Player 4</button>
+
+        <div id="p1"></div>
+        <div id="p2"></div>
+        <div id="p3"></div>
+        <div id="p4"></div>
+    </div>
+
+    <button id="start">Start Countdown</button>
+    <div id="timer">2 Minutes</div>
+
+    <div id="bomber"></div>
+    <button id="reveal" onclick="shide2()">REVEAL THE BOMBER</button>
+    <div id="rvb"></div>
+    <button id="playagain" onclick="goplayagain()">Play Again</button>
+
+    <script>
+        const foods = [
+            "Koshari",
+            "Molokhia",
+            "Fattah",
+            "Ful Medames",
+            "Taameya",
+            "Mahshi",
+            "Shawarma",
+            "Hawawshi",
+            "Kofta",
+            "Grilled Fish",
+            "Baba Ghanoush",
+            "Kebda Eskandarani",
+            "Sambousek",
+            "Kunafa",
+            "Basbousa",
+            "Om Ali",
+            "Hummus",
+            "Ouisi Mango"
+        ];
+
+
+        const food = foods[Math.floor(Math.random() * foods.length)];
+
+        const players = [
+            'You are the bomber',
+            `The food is ${food}`,
+            `The food is ${food}`,
+            `The food is ${food}`
+        ];
+
+        function shuffle(array) {
+            for (var i = array.length - 1; i >= 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        shuffle(players)
+
+        function shide(pd) {
+            var div = document.getElementById(pd);
+            const index = parseInt(pd.slice(1)) - 1;
+
+            if (div.style.display === "none") {
+                div.style.display = "block";
+                div.textContent = players[index];
+            } else {
+                div.style.display = "none";
+            }
+        }
+
+        let timeLeft = 120;
+        const timerElement = document.getElementById('timer');
+        const start = document.getElementById('start');
+        let countdown;
+
+        const cdn = () => {
+            countdown = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    timerElement.textContent = "VOTING TIME";
+
+                    document.getElementById('reveal').style.display = "block";
+                } else {
+                    timerElement.textContent = timeLeft;
+                    timeLeft--;
+                }
+            }, 1000);
+            start.disabled = true;
+        };
+
+        function hide(ll) {
+            document.getElementById(ll).style.display = "none";
+        }
+
+        start.addEventListener('click', () => {
+            cdn();
+            hide('b1');
+            hide('b2');
+            hide('b3');
+            hide('b4');
+            hide('start');
+
+        });
+
+        const shide2 = () => {
+            for (let i = 0; i < players.length; i++) {
+                if (players[i] === 'You are the bomber') {
+                    document.getElementById('rvb').textContent = 'The Bomber is Player ' + (i + 1);
+                    break;
+                }
+            }
+
+            hide('reveal');
+            hide('bomber');
+            hide('timer')
+            document.getElementById('rvb').style.display = "block";
+            document.getElementById('playagain').style.display = "block";
+        };
+
+        const goplayagain = () => {
+            window.location.href = '../index.html';
+        };
+    </script>
+</body>
+
+</html>

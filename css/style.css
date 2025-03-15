@@ -1,0 +1,49 @@
+#header h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: rgb(255, 255, 255);
+}
+#middle a {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid rgb(0, 121, 121);
+    color: rgb(0, 121, 121);
+    border-radius: 18px;
+    padding-left: 7px;
+    transition: 1s;
+    text-align: center;
+}
+#middle a:hover{
+    color: cyan;
+    transition: 1s;
+    border: 2px solid cyan  ;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f488;
+    background-image: url(../cyan-polygon-corners-pbm02irgl8mbjmj3.jpg);
+}
+#box {
+    border: 6px solid black;
+    padding: 10px;
+    background-color: rgba(240, 248, 255, 0.075);
+}

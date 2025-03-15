@@ -1,0 +1,60 @@
+#header h1 {
+    color: white;
+    text-align: center;
+    font-size: 2cm;
+}
+#middle a {
+    text-decoration: none;
+    border-radius: 16px;
+    font-size: 22px;
+    transition: 1s;
+    width: 150px;
+    height: 50px;
+    padding-top: 18px;
+    display: inline-block;
+    color: rgb(0, 172, 172);
+    border-radius: 18px;
+    border: 2px solid rgb(0, 172, 172);
+    padding-left: 7px;
+    transition: 1s;
+    font-weight: bold;
+
+}
+#middle a:hover {
+    transition: 1s;
+    background-color: rgba(128, 128, 128, 0.158);
+    padding-left: 14px;
+    padding-right: 14px;
+    color: cyan;
+    transition: 1s;
+    border: 2px solid cyan;
+
+}
+#middle {
+    position: relative;
+    text-align: center;
+    
+}
+.one1 {
+    margin-left: 4cm;
+    margin-right: 4cm;
+    width: 1cm;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+body {
+    background-image: url(../cyan-polygon-corners-pbm02irgl8mbjmj3.jpg);
+}
+#box {
+    border: 6px solid black;
+    padding: 10px;
+    background-color: rgba(240, 248, 255, 0.075);
+}
